@@ -1,0 +1,8 @@
+pymongo
+werkzeug
+flask
+mongoengine
+
+progressbar
+python-dateutil
+passlib
