@@ -1,7 +1,6 @@
+import flask
 from flask import Flask
 
-# from data import mongo_setup
-# from data.users import User
 
 app = Flask(__name__)
 
@@ -17,24 +16,16 @@ def get_latest_articles():
     ]
 
 
-# view method to display html templates
+# view method to display news articles
 @app.route('/')
 def index():
     test_articles = get_latest_articles()
     return flask.render_template('home/index.html', articles=test_articles)
 
-
+# view method to display the news source
 @app.route('/sources')
 def sources():
     return flask.render_template('home/sources.html')
-
-
-# def setup_db():
-#    mongo_setup.global_init()
-#
-#    user = User()
-#    user.name = 'Julia Guimiot'
-#    user.email = 'test@email.com'
 
 
 if __name__ == '__main__':
